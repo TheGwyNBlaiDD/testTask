@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+}
+.box {
+    width: 1000px;
+    min-height: 1000px;
+    margin: 0 auto;
+    background-color: grey;
+}
