@@ -2,8 +2,26 @@ body {
     margin: 0;
 }
 .box {
+    display: block;
     width: 1000px;
     min-height: 1000px;
     margin: 0 auto;
     background-color: grey;
+    padding-top: 30px;
+}
+.dynamictb {
+    width: 700px;
+    margin: 0 auto;
+    background-color: lightgrey;
+}
+.dynamictb table {
+    width: 100%;
+    border-collapse: collapse ;
+
+}
+.dynamictb td {
+    text-align: center;
+}
+.dynamictb table, th, td {
+    border: 1px solid black;
 }
