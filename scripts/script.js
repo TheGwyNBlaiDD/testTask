@@ -10,9 +10,14 @@ function getColorByNumber(number, max) {
 function fillTable() {
     const table = document.getElementById('dynTable');
     const cells = table.getElementsByTagName('td');
+    let maxNumber = 0;
     for( let i = 0; i < cells.length; i++){
         cells[i].textContent = getRandomNumber(1, 10000);
-        cells[i].style.backgroundColor = getColorByNumber(parseInt(cells[i].textContent, 10), 10000);
+        const number = parseInt(cells[i].textContent, 10);
+        if (number > maxNumber){
+            maxNumber = number;
+        }
+        cells[i].style.backgroundColor = getColorByNumber(parseInt(cells[i].textContent, 10), maxNumber);
     }
 }
 fillTable();
