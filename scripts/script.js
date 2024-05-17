@@ -7,12 +7,18 @@ function getColorByNumber(number, max) {
     return `rgb( 0, ${greenValue}, 0)`;
 }
 
+const table = document.getElementById('dynTable');
+const cells = table.getElementsByTagName('td');
+
 function fillTable() {
-    const table = document.getElementById('dynTable');
-    const cells = table.getElementsByTagName('td');
-    let maxNumber = 0;
     for( let i = 0; i < cells.length; i++){
         cells[i].textContent = getRandomNumber(1, 10000);
+    }
+}
+
+function colorCells() {
+    let maxNumber = 0;
+    for( let i = 0; i < cells.length; i++){
         const number = parseInt(cells[i].textContent, 10);
         if (number > maxNumber){
             maxNumber = number;
@@ -20,5 +26,6 @@ function fillTable() {
         cells[i].style.backgroundColor = getColorByNumber(parseInt(cells[i].textContent, 10), maxNumber);
     }
 }
-fillTable();
 
+fillTable();
+colorCells();

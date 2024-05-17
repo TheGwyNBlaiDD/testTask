@@ -21,6 +21,7 @@ body {
 }
 .dynamictb td {
     text-align: center;
+    color: red;
 }
 .dynamictb table, th, td {
     border: 1px solid black;
