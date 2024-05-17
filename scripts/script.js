@@ -16,8 +16,25 @@ function fillTable() {
     }
 }
 
+function getMaxMin() {
+    let maxNumber = -Infinity;
+    let minNumber = Infinity;
+    for(let i = 0; i < cells.length; i++){
+        const number = parseInt(cells[i].textContent, 10);
+        if (number < minNumber){
+            minNumber = number;
+        }
+        if (number > maxNumber){
+            maxNumber = number;
+        }
+    }
+    document.getElementById('numberMin').textContent = `Минимальное значение: ${minNumber}`;
+    document.getElementById('numberMax').textContent = `Минимальное значение: ${maxNumber}`;
+    return { maxNumber, minNumber };
+}
+
 function colorCells() {
-    let maxNumber = 0;
+    let { maxNumber } = getMaxMin();
     for( let i = 0; i < cells.length; i++){
         const number = parseInt(cells[i].textContent, 10);
         if (number > maxNumber){
@@ -28,4 +45,5 @@ function colorCells() {
 }
 
 fillTable();
+getMaxMin();
 colorCells();
