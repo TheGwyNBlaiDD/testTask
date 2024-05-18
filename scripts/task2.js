@@ -12,6 +12,12 @@ fetch(url).then(response => {
         price: results.price
     }));
     console.log(filteredData);
+    const container = document.getElementById(`sendId`);
+    filteredData.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.textContent = `Name: ${product.name}, Price: ${product.price}`;
+        container.appendChild(productElement);
+    });
 }).catch(error => {
     console.error('Проблема с функцией fetch' + error);
 });
