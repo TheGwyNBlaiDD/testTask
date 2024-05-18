@@ -16,6 +16,9 @@ fetch(url).then(response => {
     filteredData.forEach(product => {
         const productElement = document.createElement('div');
         productElement.textContent = `Name: ${product.name}, Price: ${product.price}`;
+        const button = document.createElement('button');
+        button.textContent = `Выбрать`
+        productElement.appendChild(button);
         container.appendChild(productElement);
     });
 }).catch(error => {
