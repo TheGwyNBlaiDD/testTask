@@ -21,7 +21,7 @@ body {
 }
 .dynamictb td {
     text-align: center;
-    color: red;
+    color: #fff;
 }
 .dynamictb table, th, td {
     border: 1px solid black;
@@ -30,4 +30,23 @@ body {
     width: 700px;
     margin: 0 auto;
     background-color: lightblue;
+}
+#sendId div {
+    margin-bottom: 10px;
+}
+#sendId button {
+    margin-left: 20px;
+    background-color: green;
+    border: none;
+}
+#sendId .active {
+    background-color: blue;
+}
+.inputData {
+    width: 700px;
+    margin: 0 auto;
+    background-color: lightgreen;
+}
+.inputData p, input {
+
 }

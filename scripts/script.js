@@ -7,6 +7,8 @@ function getColorByNumber(number, max) {
     return `rgb( 0, ${greenValue}, 0)`;
 }
 
+const testRogal = document.querySelector("#dynTable");
+
 const table = document.getElementById('dynTable');
 const cells = table.getElementsByTagName('td');
 
