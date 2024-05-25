@@ -45,8 +45,26 @@ body {
 .inputData {
     width: 700px;
     margin: 0 auto;
+    margin-top: 20px;
     background-color: lightgreen;
 }
-.inputData p, input {
-
+.inputData div {
+    background-color: lightblue;
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.inputData p {
+    text-align: center;
+}
+input {
+    display: block;
+    margin: 0 auto;
+    width: 280px;
+}
+.inputData button {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
 }

@@ -1,13 +1,13 @@
 const url = 'http://mobile-shop-api.hiring.devebs.net/products';
 fetch(url).then(response => {
-    
 
-    if(!response.ok) {
+
+    if (!response.ok) {
         throw new Error('Нет ответа, ошибка:' + response.statusText)
     }
     return response.json();
 }).then(data => {
-    const dataArray = data.results ;
+    const dataArray = data.results;
     console.log(dataArray);
     const filteredData = dataArray.map(results => ({
         name: results.name,
@@ -28,9 +28,9 @@ fetch(url).then(response => {
         container.appendChild(productElement);
     });
 
-    
 
-    
+
+
 
 }).catch(error => {
     console.error('Проблема с функцией fetch' + error);
@@ -38,26 +38,26 @@ fetch(url).then(response => {
 
 const selectedProduct = [];
 const containerName = document.getElementById(`sendId`);
-    
-containerName.addEventListener('click', function(event) {
+
+containerName.addEventListener('click', function (event) {
     const buttonClicked = event.target;
 
-        if (buttonClicked && buttonClicked.id === "buttonToSelect") {
-            const productId = buttonClicked.getAttribute('data-index');
-            console.log(`Product ID: ${productId}`);
+    if (buttonClicked && buttonClicked.id === "buttonToSelect") {
+        const productId = buttonClicked.getAttribute('data-index');
+        console.log(`Product ID: ${productId}`);
 
-            buttonClicked.classList.toggle('active');
-            if (buttonClicked.classList.contains('active')){
-                selectedProduct.push(productId);
-            }else {
-                const indexInArray = selectedProduct.indexOf(productId);
-                selectedProduct.splice(indexInArray);
-            }
+        buttonClicked.classList.toggle('active');
+        if (buttonClicked.classList.contains('active')) {
+            selectedProduct.push(productId);
+        } else {
+            const indexInArray = selectedProduct.indexOf(productId);
+            selectedProduct.splice(indexInArray);
         }
-    });
+    }
+});
 
 const buttonSend = document.querySelector(".buttonSend");
-buttonSend.addEventListener('click', function() {
+buttonSend.addEventListener('click', function () {
     const result = JSON.stringify(selectedProduct);
     console.log(result);
 });
