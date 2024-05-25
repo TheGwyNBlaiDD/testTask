@@ -26,3 +26,8 @@ body {
 .dynamictb table, th, td {
     border: 1px solid black;
 }
+#sendId {
+    width: 700px;
+    margin: 0 auto;
+    background-color: lightblue;
+}

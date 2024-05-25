@@ -18,6 +18,9 @@ fetch(url).then(response => {
         productElement.textContent = `Name: ${product.name}, Price: ${product.price}`;
         const button = document.createElement('button');
         button.textContent = `Выбрать`
+        button.addEventListener('click', () => {
+            console.log(`Name: ${product.name}, Price: ${product.price}`);
+        });
         productElement.appendChild(button);
         container.appendChild(productElement);
     });
