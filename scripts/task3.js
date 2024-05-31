@@ -1,25 +1,14 @@
-// import Swal from 'sweetalert2'
-// const Toast = Swal.mixin({
-//     toast: true,
-//     position: 'center',
-//     iconColor: 'white',
-//     customClass: {
-//       popup: 'colored-toast',
-//     },
-//     showConfirmButton: false,
-//     timer: 1500,
-//     timerProgressBar: true,
-//   });
-// (async () => {
-//     await Toast.fire({
-//       icon: 'success',
-//       title: 'Success',
-//     })
-//     await Toast.fire({
-//       icon: 'error',
-//       title: 'Error',
-//     })
-// })
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'center',
+    iconColor: 'white',
+    customClass: {
+      popup: 'colored-toast',
+    },
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+  });
 
 document.querySelector("#sendAjax").addEventListener('click', function() {
     var inputName = document.querySelector("#ajaxName").value;
@@ -35,8 +24,16 @@ document.querySelector("#sendAjax").addEventListener('click', function() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             console.log('Message sent to Telegram:', xhr.responseText);
+            Toast.fire({
+                icon: 'success',
+                title: 'Success',
+            });
         } else if (xhr.readyState === 4) {
             console.error('Error sending message:', xhr.responseText);
+            Toast.fire({
+                icon: 'error',
+                title: 'Error',
+            });
         }
     };
 
