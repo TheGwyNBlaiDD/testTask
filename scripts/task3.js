@@ -45,3 +45,30 @@ document.querySelector("#sendAjax").addEventListener('click', function() {
     console.log('Sending data to Telegram:', data);
     xhr.send(data);
 });
+
+document.querySelector("#sendServerRequest").addEventListener('click', function() {
+    var inputRequest = document.querySelector("#ajaxServer").value;
+
+    var url = `http://localhost:3000/check` ;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json;charst=UTF-8');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log('Text to server:', xhr.responseText);
+            Toast.fire({
+                icon: 'success',
+                title: 'Success',
+            });
+        } else if (xhr.readyState === 4) {
+            console.error('Error sending text:', xhr.responseText);
+            Toast.fire({
+                icon: 'error',
+                title: 'Error',
+            });
+        }
+    };
+
+    xhr.send(inputRequest);
+})
