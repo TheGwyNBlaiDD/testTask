@@ -13,8 +13,8 @@ const Toast = Swal.mixin({
 document.querySelector("#sendAjax").addEventListener('click', function() {
     var inputName = document.querySelector("#ajaxName").value;
     var inputNumber = document.querySelector("#ajaxNumber").value;
-    var token = '7213495137:AAG9jcfZP2yalS1BQbuKzFH9Oppw00qObLY';
-    var chatId = '803834139';
+    var token = '************************************'; // add token from Telegram bot
+    var chatId = '*********'; // add chat id from Telegram
 
     var url = `https://api.telegram.org/bot${token}/sendMessage`;
 
